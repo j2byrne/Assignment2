@@ -1,29 +1,38 @@
 #ifndef OPERATIONS_H_
 #define OPERATIONS_H_
 
-typedef struct user
+enum playerTypes {ELF, HUMAN, OGRE, WIZARD}; // enumeration for the type of player
+enum slotTypes {CITY, HILL, LEVEL_GROUND}; // enumeration for the type of slot
+enum playerActions {ATTACK, MOVE}; // enumeration for the type of slot
+
+struct players
 {
-  char name[20]; // user name
-  char type[10]; // user type
+	char name[20]; // user name
+	enum playerTypes type; // enum playerTypes called playerType
 
-  int lifePoints; // lifepoints the player has
+	int lifePoints; // lifepoints the player has
 
-  // player capabilities
-  int smartness;
-  int strength;
-  int magicSkills;
-  int luck;
-  int dexterity;
-} user;
+	// player capabilities
+	int smartness;
+	int strength;
+	int magicSkills;
+	int luck;
+	int dexterity;
+};
 
-struct board {
-  char type[20]; // type of slot
-  int position; // position of slot
-  int nextPosition; // position of next slot
+// definition of struct slot
+struct slots {
+	enum slotTypes type; // enum slotTypes called slotType
+	struct players *playerPtr; // pointer to a user set to NULL
+};
 
-  /**** Struct not finished ****/
-} board;
+int slotNumber; // global integer variable slotNumber
+int playerNumber; // global integer variable playerNumber
 
-//Function Prototypes go here
+// Function Prototypes
+void slotTypeRandom(struct slots slot[]); // function to randomly select the type of slot for the array
+void playerInitialize(struct players player[]); // function to initialize the structure of players
+void playerPositionStart(struct slots slot[], struct players player[]); // function to put each player in a slot
+void playerTurn(struct slots slot[], struct players player[]);
 
 #endif /* OPERATIONS_H_ */
