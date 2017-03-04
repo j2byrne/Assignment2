@@ -5,10 +5,10 @@
 
 int main(void)
 {
-	srand(time(NULL)); // seed the rand function
-
 	struct players player[6]; // struct players called player
 	struct slots slot[20]; // struct slots called slot
+
+	srand(time(NULL)); // seed the rand function
 
 	// ask user for the number of players and verify that it is between 1 and 6
 	do
@@ -32,7 +32,10 @@ int main(void)
 
 	while (1 == 1)
 	{
+		for (int i = 0; i < playerNumber; i++)
+		{
 
+		}
 	}
 
 	return 0;

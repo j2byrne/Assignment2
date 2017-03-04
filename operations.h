@@ -33,6 +33,7 @@ int playerNumber; // global integer variable playerNumber
 void slotTypeRandom(struct slots slot[]); // function to randomly select the type of slot for the array
 void playerInitialize(struct players player[]); // function to initialize the structure of players
 void playerPositionStart(struct slots slot[], struct players player[]); // function to put each player in a slot
-void playerTurn(struct slots slot[], struct players player[]);
+void playerTurn(struct slots slot[], struct players player[], int currentPlayer); // function for the current players turn
+void playerMove(struct slots slot[], struct players player[], int currentPlayer, int previousSlot, int nextSlot); // function to complete a players move
 
 #endif /* OPERATIONS_H_ */
