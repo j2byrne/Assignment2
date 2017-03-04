@@ -22,19 +22,20 @@ int main(void)
 	// ask user for the number of slots and verify that it is between 1 and 20
 	do
 	{
-		printf("Please enter the number of slots (max = 20): "); // prompt
+		printf("Please enter the number of slots (from %d to 20): ", playerNumber); // prompt
 		scanf("%d", &slotNumber); // read the number of slots from the user
-	} while (slotNumber > 20 || slotNumber < 1); // validate that it is between 1 and 20
+	} while (slotNumber > 20 || slotNumber < playerNumber); // validate that it is between 1 and 20
 
-	slotTypeRandom(slot);
+	slotInitialize(slot); // call function to setup slot types
 
-	playerPositionStart(slot, player);
+	playerPositionStart(slot, player); // call function to position each player in a slot
 
-	while (1 == 1)
+	while (1 == 1) // *********************** NEEDS TO CHANGE, THIS IS JUST UNTIL WE FIGURE OUT ABOUT WHEN SOMEONE WINS ETC ********************
 	{
-		for (int i = 0; i < playerNumber; i++)
+		// loop through each player
+		for (int currentPlayer = 0; currentPlayer < playerNumber; currentPlayer++)
 		{
-
+			playerMove(slot, player, currentPlayer) // call playerTurn function
 		}
 	}
 
