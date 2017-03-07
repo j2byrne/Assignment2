@@ -3,24 +3,21 @@
 #include <time.h>
 #include "operations.h" // operations header
 
-struct player players[6];
+struct player players[6];  // creates an array of 6 structures
 int main(void)
 {
 	int p,i,j,choice;
-	printf("How many players are there?: ");  
+	printf("How many players are there?: ");  // stores the number of players in playernumber
 	scanf("%d",&playernumber);
 	
-	int array[playernumber];   
-	char a[playnumber][playnumber];
-	
-	for(i=0;i<p;i++)
+	for(i=0;i<p;i++)     // loop to store data on each player
 	{
-		int  dex=0, sm=0, st=0, l=0, m=0;
-		printf("Enter your name: ");  
-		scanf("%s",&arrays[i].name);
+		int  dex=0, sm=0, st=0, l=0, m=0;  // variables to store data on each player
+		printf("Enter your name: ");       // stores name of each player
+		scanf("%s",&players[i].name);
 		
 		printf("Choose your type: \n1 for Ogre \n2 for Human \n3 for Wizard \n4 for Elf\n");   
-		scanf("%d",&choice);
+		scanf("%d",&choice);  // stores class of each player
 		
 		switch(choice)
 			{
@@ -47,7 +44,7 @@ int main(void)
 			}
 			}
 			
-			stas( &dex, &l, &m, &st, &sm, &i); 
+			stats( &dex, &l, &m, &st, &sm, &i); 
 			players[i].dexterity =dex;
 			players[i].luck = l;
 			players[i].magic =m;
