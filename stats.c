@@ -1,7 +1,7 @@
 void stats( int *dex, int *l, int *m, int *st, int *sm, int *u)
 {
 	srand(time(NULL));
-	if(arrays[*u].class == 0)
+	if(players[*u].class == 0)
 	{
 		
 		printf("\nOGRE\n");
@@ -18,7 +18,7 @@ void stats( int *dex, int *l, int *m, int *st, int *sm, int *u)
 		do{*dex = rand()%100;
 		}while(*dex<80);
 	}
-	else if(arrays[*u].class == 1)
+	else if(players[*u].class == 1)
 	{
 
 		do{
@@ -30,7 +30,7 @@ void stats( int *dex, int *l, int *m, int *st, int *sm, int *u)
 			
 		}while((*m+*sm+*st+*l+*dex)>300);
 	}
-	else if(arrays[*u].class == 2)
+	else if(players[*u].class == 2)
 	{
 		
 		*m=25;
@@ -46,7 +46,7 @@ void stats( int *dex, int *l, int *m, int *st, int *sm, int *u)
 			*l = rand()%100;
 		}while(*l<50);
 	}
-	else if(arrays[*u].class == 3)
+	else if(players[*u].class == 3)
 	{
 		do{
 		*m=rand()%80;
