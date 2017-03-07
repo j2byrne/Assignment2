@@ -5,7 +5,7 @@ enum playerTypes {ELF, HUMAN, OGRE, WIZARD}; // enumeration for the type of play
 enum slotTypes {CITY, HILL, LEVEL_GROUND}; // enumeration for the type of slot
 enum playerActions {ATTACK, MOVE}; // enumeration for the type of slot
 
-struct players
+struct player
 {
 	char name[20]; // user name
 	enum playerTypes type; // enum playerTypes called playerType
