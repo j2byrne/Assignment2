@@ -3,7 +3,7 @@
 #include <time.h>
 #include "operations.h" // operations header
 
-struct player arrays[6];
+struct player players[6];
 int main(void)
 {
 	int p,i,j,choice;
@@ -25,19 +25,19 @@ int main(void)
 		switch(choice)
 			{
 			case 1:{
-				arrays[i].class = 0;     
+				players[i].class = 0;     
 				break;
 			}
 			case 2:{
-				arrays[i].class = 1;
+				players[i].class = 1;
 				break;
 			}
 			case 3:{
-				arrays[i].class = 2;
+				players[i].class = 2;
 				break;
 			}
 			case 4:{
-				arrays[i].class = 3;
+				players[i].class = 3;
 				break;
 
 			}
@@ -48,12 +48,12 @@ int main(void)
 			}
 			
 			stas( &dex, &l, &m, &st, &sm, &i); 
-			arrays[i].dexterity =dex;
-			arrays[i].luck = l;
-			arrays[i].magic =m;
-			arrays[i].strength = st;
-			arrays[i].smartness= sm;
-			arrays[i].lifepoints = 100;
+			players[i].dexterity =dex;
+			players[i].luck = l;
+			players[i].magic =m;
+			players[i].strength = st;
+			players[i].smartness= sm;
+			players[i].lifepoints = 100;
 	}	
 
 	print(playernumber ,choice);	
