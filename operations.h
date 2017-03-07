@@ -20,7 +20,6 @@ struct player
 	int magic;
 	int luck;
 	int dexterity;
-	int health;
 };
 
 // definition of struct slot
