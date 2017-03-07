@@ -19,10 +19,18 @@ void playerInitialize(struct players player[], struct slots slot[])
 		}
 
 		player[currentPlayer].lifePoints = 100; // set lifePoints to 100
-		player[currentPlayer].smartness = 50;
-		player[currentPlayer].strength = 50;
-		player[currentPlayer].magicSkills = 50;
-		player[currentPlayer].luck = 50;
-		player[currentPlayer].dexterity = 50;
+		void
+
+		switch (player[currentPlayer].type)
+		{
+			case ELF:
+				void elfStart(struct players player);
+			case HUMAN:
+				void humanStart(struct players player);
+			case OGRE:
+				void ogreStart(struct players player);
+			case WIZARD:
+				void wizardStart(struct players player);
+		}
 	}
 }

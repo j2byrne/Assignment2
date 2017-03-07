@@ -2,135 +2,130 @@
 #include <stdlib.h>
 #include <time.h>
 
-struct player{
-	char name[20];
+struct Players{
+	char name_one[20];
 	int lifepoints;
-	int class;
+	int type;
 	int smartness,strength,magic,luck,dexterity,health;
 	};
 	
-struct player arrays[6];
-void player_type_function( int *dex, int *l, int *m, int *st, int *sm, int *u);
-void print(int p,int choice);
+struct Players cases[6];
+void player_type_function(int *t, int *d, int *l, int *m_s, int *st, int *sm, int *Index);
+void player_type(int type_integer);	
+void print_players();
 
 int main(void)
 {
-	int p,i,j,choice;
-	printf("How many players are there?: ");  
+	int p,i,j;
+	printf("How many players are there?: ");   //  Gets the number of players
 	scanf("%d",&p);
 	
-	int array[p];   
+	int array[p];   // initilizes two arrays: one for player types and the other for player names
 	char a[p][p];
 	
 	for(i=0;i<p;i++)
 	{
-		int  dex=0, sm=0, st=0, l=0, m=0;
-		printf("Enter your name: ");  
-		scanf("%s",&arrays[i].name);
+		int t=0, d=0, sm=0, st=0, l=0, m_s=0,choice;
+		printf("Enter your name: ");   // stores each name in the character array "a"
+		scanf("%s",&cases[i].name_one);
 		
-		printf("Choose your type: \n1 for Ogre \n2 for Human \n3 for Wizard \n4 for Elf\n");   
+		printf("Choose your type: \n1 for Ogre \n2 for Human \n3 for Wizard \n4 for Elf\n");   // stores a number correalating to each player type
 		scanf("%d",&choice);
 		
 		switch(choice)
 			{
 			case 1:{
-				arrays[i].class = 0;     
+				cases[i].type = 0;     
 				break;
 			}
 			case 2:{
-				arrays[i].class = 1;
+				cases[i].type = 1;
 				break;
 			}
 			case 3:{
-				arrays[i].class = 2;
+				cases[i].type = 2;
 				break;
 			}
 			case 4:{
-				arrays[i].class = 3;
+				cases[i].type = 3;
 				break;
 
 			}
 			default:{
 				printf("ERROR!");
-				exit(0);   
+				exit(0);
 			}
 			}
 			
-			player_type_function( &dex, &l, &m, &st, &sm, &i); 
-			arrays[i].dexterity =dex;
-			arrays[i].luck = l;
-			arrays[i].magic =m;
-			arrays[i].strength = st;
-			arrays[i].smartness= sm;
-			arrays[i].health = 100;
+			player_type_function(&t, &d, &l, &m_s, &st, &sm, &i); 
+			cases[i].dexterity =d;
+			cases[i].luck = l;
+			cases[i].magic =m_s;
+			cases[i].strength = st;
+			cases[i].smartness= sm;
+			cases[i].health = 100;
 	}	
 
-	print(p ,choice);	
+	
+	
+
+			print_players(p);	
     return 0;
 	
 }
 
-void player_type_function( int *dex, int *l, int *m, int *st, int *sm, int *u)
+void player_type_function(int *t, int *d, int *l, int *m_s, int *st, int *sm, int *index)
 {
 	srand(time(NULL));
-	if(arrays[*u].class == 0)
+	if(cases[*index].type == 0)
 	{
-		
+		//Limitations and requirements of the Ogre Type skills are adhered in this block.
 		printf("\nOGRE\n");
 		do{
-		*sm = rand()%20;
-		*l = rand()%100;
-		
+			*sm = rand()%20;
+			*l = rand()%100;
 		}while((*sm+*l)>51);
-		*m=0;
-		
+		*m_s=0;
 		do{*st = rand()%100;
 		}while(*st<80);
-		
-		do{*dex = rand()%100;
-		}while(*dex<80);
+		do{*d = rand()%100;
+		}while(*d<80);
 	}
-	else if(arrays[*u].class == 1)
+	else if(cases[*index].type == 1)
 	{
-
+		//Limitations and requirements of the Human Type skills are adhered in this block.
 		do{
-			*m=1+rand()%100;
+			*m_s=1+rand()%100;
 			*sm = 1+rand()%70;
 			*st = 1+rand()%100;
 			*l= 1+rand()%100;
-			*dex= 1+rand()%100;
-			
-		}while((*m+*sm+*st+*l+*dex)>300);
+			*d= 1+rand()%100;
+		}while((*m_s+*sm+*st+*l+*d)>300);
 	}
-	else if(arrays[*u].class == 2)
+	else if(cases[*index].type == 2)
 	{
-		
-		*m=25;
+		//Limitations and requirements of the Wizard Type skills are adhered in this block.
+		*m_s=25;
 		do{
-		*sm = rand()%100;
+			*sm = rand()%100;
 		}while(*sm<90);
-		
 		*st = rand()%20;
-		
-		*dex=rand()%100;
-		
+		*d=rand()%100;
 		do{
 			*l = rand()%100;
 		}while(*l<50);
 	}
-	else if(arrays[*u].class == 3)
+	else if(cases[*index].type == 3)
 	{
+		//Limitations and requirements of the Elf Type skills are adhered in this block.
 		do{
-		*m=rand()%80;
-		}while(*m<50);
+			*m_s=rand()%80;
+		}while(*m_s<50);
 		do{
-		*sm = rand()%100;
+			*sm = rand()%100;
 		}while(*sm<70);
-		
 		*st = rand()%50;
-		
-		*dex=rand()%100;
-		
+		*d=rand()%100;
 		do{
 			*l = rand()%100;
 		}while(*l<50);
@@ -143,42 +138,51 @@ void player_type_function( int *dex, int *l, int *m, int *st, int *sm, int *u)
 
 }
 
-void print(int p , int choice)
+void print_players()
 {
 	
-   
+    int p = 6;
 	for(int i=0; i<p; i++)
 	{
 		
-		int count = arrays[i].class;
-		printf("Player Name: %s \n", arrays[i].name);
-		printf("Player Class: ");
-		//type(count);
-		if(choice == 1)
-	    {
-	    printf( "Ogre");
-	    }
-	    else if(choice ==2)
-	    {
-	    printf("Human");
-	    }
-	    else if(choice ==3)
-	    {
-	    printf("Wizard");
-	    }
-	    else if(choice ==4)
-	    {
-	    printf("Elf");
-	    }
-		
-		printf("\nHealth is: %d\n", arrays[i].health);
-		printf("Dexterity is: %d\n", arrays[i].dexterity);
-		printf("Luck is : %d\n", arrays[i].luck);
-		printf("Magic Skills are: %d\n", arrays[i].magic);
-		printf("Strength is: %d\n", arrays[i].strength);
-		printf("Smartness: %d\n", arrays[i].smartness);
-		printf("\n");
+		int count = cases[i].type;
+		printf("Player Name: %s \n", cases[i].name_one);
+		printf("Player Type: ");
+		player_type(count);
+		printf("\nPlayer Health: %d\n", cases[i].health);
+		printf("Player Dexterity: %d\n", cases[i].dexterity);
+		printf("Player Luck: %d\n", cases[i].luck);
+		printf("Player Magic Skills: %d\n", cases[i].magic);
+		printf("Player Strength: %d\n", cases[i].strength);
+		printf("Player Smartness: %d\n", cases[i].smartness);
+		printf("\n*********************************************************\n");
 	}
+
+}
+
+void player_type(int type_Integer)
+{
+	char type[6];
+	if(type_Integer == 0)
+	{
+		printf( "Ogre");
+	}
+	else if(type_Integer ==1)
+	{
+		printf("Human");
+	}
+	else if(type_Integer ==2)
+	{
+		printf("Wizard");
+	}
+	else if(type_Integer ==3)
+	{
+		printf("Elf");
+	}
+	else{
+		printf("ERROR");
+	}
+
 
 }
 
