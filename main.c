@@ -8,10 +8,10 @@ int main(void)
 {
 	int p,i,j,choice;
 	printf("How many players are there?: ");  
-	scanf("%d",&p);
+	scanf("%d",&playernumber);
 	
-	int array[p];   
-	char a[p][p];
+	int array[playernumber];   
+	char a[playnumber][playnumber];
 	
 	for(i=0;i<p;i++)
 	{
@@ -56,7 +56,7 @@ int main(void)
 			arrays[i].health = 100;
 	}	
 
-	print(p ,choice);	
+	print(playernumber ,choice);	
 	
 	
 	
