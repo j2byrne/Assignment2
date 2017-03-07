@@ -53,7 +53,7 @@ int main(void)
 			arrays[i].magic =m;
 			arrays[i].strength = st;
 			arrays[i].smartness= sm;
-			arrays[i].health = 100;
+			arrays[i].lifepoints = 100;
 	}	
 
 	print(playernumber ,choice);	
