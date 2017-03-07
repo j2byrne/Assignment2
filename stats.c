@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 void stats( int *dex, int *l, int *m, int *st, int *sm, int *u)
 {
 	srand(time(NULL));
