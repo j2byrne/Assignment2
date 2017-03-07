@@ -3,12 +3,6 @@
 #include <time.h>
 #include "operations.h" // operations header
 
-struct player{
-	char name[20];
-	int lifepoints;
-	int class;
-	int smartness,strength,magic,luck,dexterity,health;
-	};
 
 int main(void)
 {
