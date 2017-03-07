@@ -11,12 +11,11 @@ struct player{
 	
 struct player arrays[6];
 void player_type_function( int *dex, int *l, int *m, int *st, int *sm, int *u);
-void type(int k);	
-void print();
+void print(int p,int choice);
 
 int main(void)
 {
-	int p,i,j;
+	int p,i,j,choice;
 	printf("How many players are there?: ");  
 	scanf("%d",&p);
 	
@@ -25,7 +24,7 @@ int main(void)
 	
 	for(i=0;i<p;i++)
 	{
-		int  dex=0, sm=0, st=0, l=0, m=0,choice;
+		int  dex=0, sm=0, st=0, l=0, m=0;
 		printf("Enter your name: ");  
 		scanf("%s",&arrays[i].name);
 		
@@ -66,7 +65,7 @@ int main(void)
 			arrays[i].health = 100;
 	}	
 
-	print(p);	
+	print(p ,choice);	
     return 0;
 	
 }
@@ -144,18 +143,35 @@ void player_type_function( int *dex, int *l, int *m, int *st, int *sm, int *u)
 
 }
 
-void print()
+void print(int p , int choice)
 {
 	
-    int p = 6;
+   
 	for(int i=0; i<p; i++)
 	{
 		
 		int count = arrays[i].class;
 		printf("Player Name: %s \n", arrays[i].name);
 		printf("Player Class: ");
-		type(count);
-		printf("Health is: %d\n", arrays[i].health);
+		//type(count);
+		if(choice == 1)
+	    {
+	    printf( "Ogre");
+	    }
+	    else if(choice ==2)
+	    {
+	    printf("Human");
+	    }
+	    else if(choice ==3)
+	    {
+	    printf("Wizard");
+	    }
+	    else if(choice ==4)
+	    {
+	    printf("Elf");
+	    }
+		
+		printf("\nHealth is: %d\n", arrays[i].health);
 		printf("Dexterity is: %d\n", arrays[i].dexterity);
 		printf("Luck is : %d\n", arrays[i].luck);
 		printf("Magic Skills are: %d\n", arrays[i].magic);
@@ -163,29 +179,6 @@ void print()
 		printf("Smartness: %d\n", arrays[i].smartness);
 		printf("\n");
 	}
-
-}
-
-void type(int k)
-{
-	char type[6];
-	if(k == 0)
-	{
-	printf( "Ogre");
-	}
-	else if(k ==1)
-	{
-	printf("Human");
-	}
-	else if(k ==2)
-	{
-	printf("Wizard");
-	}
-	else if(k ==3)
-	{
-	printf("Elf");
-	}
-	
 
 }
 
