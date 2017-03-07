@@ -6,7 +6,9 @@ enum playerTypes {ELF, HUMAN, OGRE, WIZARD}; // enumeration for the type of play
 enum slotTypes {CITY, HILL, LEVEL_GROUND}; // enumeration for the type of slot
 enum playerActions {ATTACK, MOVE}; // enumeration for the type of slot
 
-struct players
+
+
+struct player
 {
 	char name[20]; // user name
 	enum playerTypes type; // enum playerTypes called playerType
@@ -17,7 +19,7 @@ struct players
 	// player capabilities
 	int smartness;
 	int strength;
-	int magicSkills;
+	int magic;
 	int luck;
 	int dexterity;
 };
@@ -33,7 +35,13 @@ int slotNumber; // global integer variable slotNumber
 int playerNumber; // global integer variable playerNumber
 
 // Function Prototypes
+<<<<<<< HEAD
 void slotInitialize(struct slots slot[], struct slots slot[]); // function to randomly select the type of slot for the array
+=======
+void stats( int *dex, int *l, int *m, int *st, int *sm, int *u);
+void print(int p,int choice);
+void slotTypeRandom(struct slots slot[]); // function to randomly select the type of slot for the array
+>>>>>>> 95fca5f7ff0f7ee620c9580433ce8ac6788e2f27
 void playerInitialize(struct players player[]); // function to initialize the structure of players
 void playerPositionStart(struct slots slot[], struct players player[]); // function to put each player in a slot
 void playerTurn(struct slots slot[], struct players player[], int currentPlayer); // function for the current players turn
