@@ -4,15 +4,16 @@ void stats( int *dex, int *l, int *m, int *st, int *sm, int *u)
 	if(players[*u].class == 0)
 	{
 		
-		printf("\nOGRE\n");
-		do{
-		*sm = rand()%20;
-		*l = rand()%100;
+		//if the player has chosen to be an ogre then it assigns random values for its stats based on the paramaters in the question
+
+		do{                       // same thing for the rest of the classe
+		*sm = rand()%20;                 // dex = dexterity,sm = smartness,etc.
+		*l = rand()%100;             
 		
 		}while((*sm+*l)>51);
 		*m=0;
 		
-		do{*st = rand()%100;
+		do{*st = rand()%100;       //ogre
 		}while(*st<80);
 		
 		do{*dex = rand()%100;
@@ -22,7 +23,7 @@ void stats( int *dex, int *l, int *m, int *st, int *sm, int *u)
 	{
 
 		do{
-			*m=1+rand()%100;
+			*m=1+rand()%100;              //human
 			*sm = 1+rand()%70;
 			*st = 1+rand()%100;
 			*l= 1+rand()%100;
@@ -35,7 +36,7 @@ void stats( int *dex, int *l, int *m, int *st, int *sm, int *u)
 		
 		*m=25;
 		do{
-		*sm = rand()%100;
+		*sm = rand()%100;                        //wizard
 		}while(*sm<90);
 		
 		*st = rand()%20;
@@ -49,7 +50,7 @@ void stats( int *dex, int *l, int *m, int *st, int *sm, int *u)
 	else if(players[*u].class == 3)
 	{
 		do{
-		*m=rand()%80;
+		*m=rand()%80;                         //elf
 		}while(*m<50);
 		do{
 		*sm = rand()%100;
