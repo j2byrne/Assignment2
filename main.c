@@ -63,16 +63,11 @@ int main(void)
 	
 	srand(time(NULL)); // seed the rand function
 
-	struct players player[6]; // struct players called player
+	
 	struct slots slot[20]; // struct slots called slot
 
 	// ask user for the number of players and verify that it is between 1 and 6
-	do
-	{
-		printf("Please enter the number of players (max = 6): "); // prompt
-		scanf("%d", &playerNumber); // read the number of players from the user
-	} while (playerNumber > 6 || playerNumber < 1); // validate that it is between 1 and 6
-
+	
 	playerInitialize(player);
 
 	// ask user for the number of slots and verify that it is between 1 and 20
