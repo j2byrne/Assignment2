@@ -15,9 +15,10 @@ struct players
 	// player capabilities
 	int smartness;
 	int strength;
-	int magicSkills;
+	int magic;
 	int luck;
 	int dexterity;
+	int health;
 };
 
 // definition of struct slot
