@@ -3,7 +3,7 @@
 #include <time.h>
 #include "operations.h" // operations header
 
-
+struct player arrays[6];
 int main(void)
 {
 	int p,i,j,choice;
