@@ -1,4 +1,6 @@
 #include <stdbool.h>
+#include <stdlib.h>
+#include "operations.h"
 
 void playerPositionStart(struct slots slot[], struct players player[])
 {

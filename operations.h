@@ -25,7 +25,7 @@ struct players
 // definition of struct slot
 struct slots {
 	enum slotTypes type; // enum slotTypes called slotType
-	bool occupied = false; // boolean value to see if theres a player in the slot
+	bool occupied; // boolean value to see if theres a player in the slot
 	int player; // integer variable to indicate which player is in the slot if there is a player in the slot
 };
 
@@ -33,10 +33,15 @@ int slotNumber; // global integer variable slotNumber
 int playerNumber; // global integer variable playerNumber
 
 // Function Prototypes
-void slotInitialize(struct slots slot[], struct slots slot[]); // function to randomly select the type of slot for the array
+void slotInitialize(struct slots slot[]); // function to randomly select the type of slot for the array
 void playerInitialize(struct players player[]); // function to initialize the structure of players
 void playerPositionStart(struct slots slot[], struct players player[]); // function to put each player in a slot
 void playerTurn(struct slots slot[], struct players player[], int currentPlayer); // function for the current players turn
-void playerMove(struct slots slot[], struct players player[], int currentPlayer, int currentSlot, int previousSlot, int nextSlot); // function to complete a players move
+void playerMove(struct slots slot[], struct players player[], int currentPlayer, int previousSlot, int nextSlot); // function to complete a players move
+
+void elfStart(struct players player[], int currentPlayer);
+void humanStart(struct players player[], int currentPlayer);
+void ogreStart(struct players player[], int currentPlayer);
+void wizardStart(struct players player[], int currentPlayer);
 
 #endif /* OPERATIONS_H_ */

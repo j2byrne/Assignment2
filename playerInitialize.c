@@ -2,12 +2,10 @@
 #include <stdlib.h>
 #include "operations.h" // operations header
 
-void playerInitialize(struct players player[], struct slots slot[])
+void playerInitialize(struct players player[])
 {
 	for (int currentPlayer = 0; currentPlayer < playerNumber-1; currentPlayer++)
 	{
-		int random; // integer for random number generated
-
 		printf("Please input a players name followed by the player type, 0 for Elf, 1 for Human, 2 for Ogre and 3 for Wizard: "); // prompt
 		scanf("%s %d", player[currentPlayer].name, &player[currentPlayer].type); // read player name and type from user and assign data to player structure
 
@@ -19,18 +17,24 @@ void playerInitialize(struct players player[], struct slots slot[])
 		}
 
 		player[currentPlayer].lifePoints = 100; // set lifePoints to 100
-		void
 
+		// calling function depending on the player type
 		switch (player[currentPlayer].type)
 		{
 			case ELF:
-				void elfStart(struct players player);
+				elfStart(player, currentPlayer); // call function elfStart
+				break;
 			case HUMAN:
-				void humanStart(struct players player);
+				humanStart(player, currentPlayer); // call function humanStart
+				break;
 			case OGRE:
-				void ogreStart(struct players player);
+				ogreStart(player, currentPlayer); // call function ogreStart
+				break;
 			case WIZARD:
-				void wizardStart(struct players player);
+				wizardStart(player, currentPlayer); // call function wizardStart
+				break;
+			default:
+				break;
 		}
 	}
 }

@@ -35,7 +35,7 @@ int main(void)
 		// loop through each player
 		for (int currentPlayer = 0; currentPlayer < playerNumber; currentPlayer++)
 		{
-			playerMove(slot, player, currentPlayer) // call playerTurn function
+			playerTurn(slot, player, currentPlayer); // call playerTurn function
 		}
 	}
 

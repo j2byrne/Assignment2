@@ -4,8 +4,9 @@
 void slotInitialize(struct slots slot[])
 {
 	// loop though each slot
-	for (size_t i = 0; i < slotNumber-1; i++)
+	for (size_t currentSlot = 0; currentSlot < slotNumber-1; currentSlot++)
 	{
-		slot[i].type = rand()%3;
+		slot[currentSlot].type = rand()%3;
+		slot[currentSlot].occupied = false;
 	}
 }

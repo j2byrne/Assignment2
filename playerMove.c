@@ -1,13 +1,16 @@
+#include <stdio.h>
 #include <stdbool.h>
+#include "operations.h"
 
-void playerMove(struct slots slot[], struct players player[], int currentPlayer, int currentSlot, int previousSlot, int nextSlot)
+void playerMove(struct slots slot[], struct players player[], int currentPlayer, int previousSlot, int nextSlot) // function to complete a players move
 {
 	int playerMove; // position that the player will move to
 	int moveSlot; // user choice to move player
+	int currentSlot = player[currentPlayer].position;
 
 	if (slot[previousSlot].occupied == false && slot[nextSlot].occupied != false) // check if the only neighboring slot is the previous slot
 	{
-		printf("You will move to the previous slot (slot %d) as the next slot (slot %d) is occupied by another player", previousSlot, nextSlot); // message to user indicating that they will move to the previous slot
+		printf("You will move to the previous slot (slot %d) as the next slot (slot %d) is occupied by another player\n", previousSlot, nextSlot); // message to user indicating that they will move to the previous slot
 		playerMove = previousSlot; // setting playerMove to the previousSlot
 	}
 	else if (slot[previousSlot].occupied != false && slot[nextSlot].occupied == false)  // check if the only neighboring slot is the next slot
@@ -15,15 +18,15 @@ void playerMove(struct slots slot[], struct players player[], int currentPlayer,
 		printf("You will move to the next slot (slot %d) as the previous slot (slot %d) is occupied by another player", nextSlot, previousSlot); // message to user indicating that they will move to the next slot
 		playerMove = nextSlot; // setting playerMove to the nextSlot
 	}
-	else if (slot[previousSlot].occupied == false && slot[nextSlot].occupied == false) // check if the only neighboring slot is the previous slot
+	else //if (slot[previousSlot].occupied == false && slot[nextSlot].occupied == false) // check if the only neighboring slot is the previous slot
 	{
 		// do while loop to see which slot the player wants to move to and check if the input is valid
 		do
 		{
-			printf("Please enter 0 to move to the previous slot (slot %d) or 1 to move to the next slot (slot %d): "); // prompt
+			printf("Please enter 0 to move to the previous slot (slot %d) or 1 to move to the next slot (slot %d): ", previousSlot, nextSlot); // prompt
 			scanf("%d", &moveSlot); // read user input for which slot they want to move to
 		} while (moveSlot > 1 || moveSlot < 0); // check if the input is valid
-		(moveSlot == 0) ? playerMove = previousSlot : playerMove = nextSlot; // conditional to set the playerMove to the number of the slot that the user wants the player to move to
+		(moveSlot == 0) ? (playerMove = previousSlot) : (playerMove = nextSlot); // conditional to set the playerMove to the number of the slot that the user wants the player to move to
 	}
 
 	slot[currentSlot].occupied = false; // set slot that the player was in to being not occupied

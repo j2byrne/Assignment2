@@ -1,4 +1,6 @@
+#include <stdio.h>
 #include <stdbool.h>
+#include "operations.h"
 
 void playerTurn(struct slots slot[], struct players player[], int currentPlayer)
 {
@@ -9,7 +11,7 @@ void playerTurn(struct slots slot[], struct players player[], int currentPlayer)
 	if (slot[previousSlot].occupied != false && slot[nextSlot].occupied != false) // When there are no empty neighboring slots
 	{
 		printf("There are no empty neighboring slots, you must attack!\n"); // message
-		playerAttack(); // call player attack function
+		//playerAttack(); // call player attack function
 	}
 	else // When there are empty neighboring slots
 	{
