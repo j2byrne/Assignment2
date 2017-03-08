@@ -30,13 +30,19 @@ int main(void)
 
 	playerPositionStart(slot, player); // call function to position each player in a slot
 
-	while (1 == 1) // *********************** NEEDS TO CHANGE, THIS IS JUST UNTIL WE FIGURE OUT ABOUT WHEN SOMEONE WINS ETC ********************
+	for (int i = 0; i < 1; i++) // *********************** NEEDS TO CHANGE, THIS IS JUST UNTIL WE FIGURE OUT ABOUT WHEN SOMEONE WINS ETC ********************
 	{
 		// loop through each player
 		for (int currentPlayer = 0; currentPlayer < playerNumber; currentPlayer++)
 		{
 			playerTurn(slot, player, currentPlayer); // call playerTurn function
 		}
+/*
+		for (int i = 0; i < playerNumber; i++)
+		{
+			printf("name %s type %d life %d sm %d st %d ms %d l %d d %d pos %d\n", player[i].name, player[i].type, player[i].lifePoints, player[i].smartness, player[i].strength, player[i].magicSkills, player[i].luck, player[i].dexterity, player[i].position);
+		}
+*/
 	}
 
 	return 0;

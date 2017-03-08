@@ -15,7 +15,7 @@ void playerTurn(struct slots slot[], struct players player[], int currentPlayer)
 	}
 	else // When there are empty neighboring slots
 	{
-		printf("Please enter 0 if you want to attack of 1 if you want to move: "); // prompt
+		printf("Please enter 0 if you want to attack or 1 if you want to move: "); // prompt
 		scanf("%d", &playerAction); // read integer which is saved in the enumeration playerAction to determine whether the player wants to attack another player or move position
 
 		// switch to determine the players action

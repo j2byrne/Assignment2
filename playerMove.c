@@ -15,7 +15,7 @@ void playerMove(struct slots slot[], struct players player[], int currentPlayer,
 	}
 	else if (slot[previousSlot].occupied != false && slot[nextSlot].occupied == false)  // check if the only neighboring slot is the next slot
 	{
-		printf("You will move to the next slot (slot %d) as the previous slot (slot %d) is occupied by another player", nextSlot, previousSlot); // message to user indicating that they will move to the next slot
+		printf("You will move to the next slot (slot %d) as the previous slot (slot %d) is occupied by another player\n", nextSlot, previousSlot); // message to user indicating that they will move to the next slot
 		playerMove = nextSlot; // setting playerMove to the nextSlot
 	}
 	else //if (slot[previousSlot].occupied == false && slot[nextSlot].occupied == false) // check if the only neighboring slot is the previous slot
