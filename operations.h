@@ -38,5 +38,7 @@ void playerInitialize(struct players player[]); // function to initialize the st
 void playerPositionStart(struct slots slot[], struct players player[]); // function to put each player in a slot
 void playerTurn(struct slots slot[], struct players player[], int currentPlayer); // function for the current players turn
 void playerMove(struct slots slot[], struct players player[], int currentPlayer, int previousSlot, int nextSlot); // function to complete a players move
+void playerAttack(struct slots slot[], struct players player[], int currentPlayer, int previousSlot, int nextSlot); // function to complete a players attack
+void printPlayers(struct players player[]); // print out players
 
 #endif /* OPERATIONS_H_ */

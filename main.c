@@ -11,13 +11,19 @@ int main(void)
 	srand(time(NULL)); // seed the rand function
 
 	// ask user for the number of players and verify that it is between 1 and 6
+
 	do
 	{
 		printf("Please enter the number of players (max = 6): "); // prompt
 		scanf("%d", &playerNumber); // read the number of players from the user
+
 	} while (playerNumber > 6 || playerNumber < 1); // validate that it is between 1 and 6
 
+	puts(""); // go to a new line
+
 	playerInitialize(player);
+
+	puts(""); // go to a new line
 
 	// ask user for the number of slots and verify that it is between 1 and 20
 	do
@@ -30,19 +36,17 @@ int main(void)
 
 	playerPositionStart(slot, player); // call function to position each player in a slot
 
-	for (int i = 0; i < 1; i++) // *********************** NEEDS TO CHANGE, THIS IS JUST UNTIL WE FIGURE OUT ABOUT WHEN SOMEONE WINS ETC ********************
+	for (int i = 0; i < playerNumber; i++)
 	{
-		// loop through each player
-		for (int currentPlayer = 0; currentPlayer < playerNumber; currentPlayer++)
-		{
-			playerTurn(slot, player, currentPlayer); // call playerTurn function
-		}
-/*
-		for (int i = 0; i < playerNumber; i++)
-		{
-			printf("name %s type %d life %d sm %d st %d ms %d l %d d %d pos %d\n", player[i].name, player[i].type, player[i].lifePoints, player[i].smartness, player[i].strength, player[i].magicSkills, player[i].luck, player[i].dexterity, player[i].position);
-		}
-*/
+		printf("name %s \t type %d \t life %d \t sm %d \t st %d \t ms %d \t l %d \t d %d \t pos %d\t occ %d \n", player[i].name, player[i].type, player[i].lifePoints, player[i].smartness, player[i].strength, player[i].magicSkills, player[i].luck, player[i].dexterity, player[i].position, slot[player[i].position].occupied);
+	}
+
+	// loop through each player
+	for (int currentPlayer = 0; currentPlayer < playerNumber; currentPlayer++)
+	{
+		playerTurn(slot, player, currentPlayer); // call playerTurn function
+
+		printPlayers(player); // print the player name, type and lifePoints
 	}
 
 	return 0;

@@ -5,7 +5,7 @@
 void playerPositionStart(struct slots slot[], struct players player[])
 {
 	// loop through all players
-	for (size_t currentPlayer = 0; currentPlayer < playerNumber-1; currentPlayer++)
+	for (size_t currentPlayer = 0; currentPlayer < playerNumber; currentPlayer++)
 	{
 		int random; // integer for random number generated
 
