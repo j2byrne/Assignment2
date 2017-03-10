@@ -3,7 +3,7 @@
 
 void printPlayers (struct players player[])
 {
-	printf("\n---------------------Current Players Life points---------------------\n");
+	printf("\n---------------------Current Players Life points---------------------\n");  // function to print out players name,type,and lifepoints after every attack
 	for (int printPlayer = 0; printPlayer < playerNumber; printPlayer++)
 	{
 		char type[4][7] = {"Elf", "Human", "Ogre", "Wizard"};
