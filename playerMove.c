@@ -28,7 +28,7 @@ void playerMove(struct slots slot[], struct players player[], int currentPlayer,
 		// do while loop to see which slot the player wants to move to and check if the input is valid
 		do
 		{
-			printf("Please enter 0 to move to the previous slot (slot %d) or 1 to move to the next slot (slot %d): ", previousSlot, nextSlot); // prompt
+			printf("\nPlease enter 0 to move to the previous slot (slot %d) or 1 to move to the next slot (slot %d): ", previousSlot, nextSlot); // prompt
 			scanf("%d", &moveSlot); // read user input for which slot they want to move to
 		} while (moveSlot > 1 || moveSlot < 0); // check if the input is valid
 		(moveSlot == 0) ? (playerMove = previousSlot) : (playerMove = nextSlot); // conditional to set the playerMove to the number of the slot that the user wants the player to move to

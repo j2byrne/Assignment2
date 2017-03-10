@@ -21,38 +21,38 @@ void playerInitialize(struct players player[])
 		// calling function depending on the player type
 		switch (player[currentPlayer].type)
 		{
-			case ELF:
-				player[currentPlayer].luck = 60 + rand()%41;
-				player[currentPlayer].smartness = 70 + rand()%31;
-				player[currentPlayer].strength = 1 + rand()%50;
-				player[currentPlayer].magicSkills = 51 + rand()%29;
-				player[currentPlayer].dexterity = 1 + rand()%100;
+			case ELF: // if player is an elf
+				player[currentPlayer].luck = 60 + rand()%41; // set player luck to between 60 and 100
+				player[currentPlayer].smartness = 70 + rand()%31; // set player smartness to between 70 and 100
+				player[currentPlayer].strength = 1 + rand()%50; // set player luck to between 1 and 50
+				player[currentPlayer].magicSkills = 51 + rand()%29; // set player luck to between 51 and 80
+				player[currentPlayer].dexterity = 1 + rand()%100; // set player luck to between 1 and 100
 				break;
-			case HUMAN:
+			case HUMAN: // if player is an human
 				do {
-					player[currentPlayer].magicSkills=1+rand()%100;
-					player[currentPlayer].smartness = 1+rand()%100;
-					player[currentPlayer].strength = 1+rand()%100;
-					player[currentPlayer].luck= 1+rand()%100;
-					player[currentPlayer].dexterity= 1+rand()%100;
+					player[currentPlayer].magicSkills=1+rand()%100; // set player luck to between 60 and 100
+					player[currentPlayer].smartness = 1+rand()%100; // set player luck to between 60 and 100
+					player[currentPlayer].strength = 1+rand()%100; // set player luck to between 60 and 100
+					player[currentPlayer].luck= 1+rand()%100; // set player luck to between 60 and 100
+					player[currentPlayer].dexterity= 1+rand()%100; // set player luck to between 60 and 100
 				} while((player[currentPlayer].magicSkills + player[currentPlayer].smartness + player[currentPlayer].strength + player[currentPlayer].luck + player[currentPlayer].dexterity) >= 300);
 				break;
-			case OGRE:
+			case OGRE: // if player is an ogre
 				do{
-					player[currentPlayer].smartness  = rand()%21;
-					player[currentPlayer].luck = rand()%51;
-				} while((player[currentPlayer].smartness + player[currentPlayer].luck) > 51);
+					player[currentPlayer].smartness  = rand()%21; // set player luck to between 60 and 100
+					player[currentPlayer].luck = rand()%51; // set player luck to between 60 and 100
+				} while((player[currentPlayer].smartness + player[currentPlayer].luck) > 50);
 
-				player[currentPlayer].magicSkills = 0;
-				player[currentPlayer].strength = 80 + rand()%21;
-				player[currentPlayer].dexterity = 80 + rand()%21;
+				player[currentPlayer].magicSkills = 0; // set player luck to between 60 and 100
+				player[currentPlayer].strength = 80 + rand()%21; // set player luck to between 60 and 100
+				player[currentPlayer].dexterity = 80 + rand()%21; // set player luck to between 60 and 100
 				break;
-			case WIZARD:
-			    player[currentPlayer].magicSkills=80 + rand()%21;
-				player[currentPlayer].smartness = 90 + rand()%11;
-				player[currentPlayer].strength = rand()%21;
-				player[currentPlayer].dexterity=rand()%100;
-			    player[currentPlayer].luck = 50+ rand()%51;
+			case WIZARD: // if player is an wizard
+			    player[currentPlayer].magicSkills = 80 + rand()%21; // set player luck to between 60 and 100
+				player[currentPlayer].smartness = 90 + rand()%11; // set player luck to between 60 and 100
+				player[currentPlayer].strength = 1 + rand()%21; // set player luck to between 60 and 100
+				player[currentPlayer].dexterity= 1 + rand()%100; // set player luck to between 60 and 100
+			    player[currentPlayer].luck = 50+ rand()%51; // set player luck to between 60 and 100
 				break;
 			default:
 				break;
