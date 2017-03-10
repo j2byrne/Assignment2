@@ -37,6 +37,7 @@ void playerMove(struct slots slot[], struct players player[], int currentPlayer,
 	slot[currentSlot].occupied = false; // set slot that the player was in to being not occupied
 	slot[playerMove].occupied = true; // set slot that the player is moving to to being occupied
 	slot[playerMove].player = currentPlayer; // set the number of the player to the slot
+	player[currentPlayer].position = playerMove; // change the slot the player is in to the number of the new slot
 
 	// apply changes to the current players capabilities based on the slot they moved to and their current capabilities
 	switch (slot[playerMove].type)
@@ -74,7 +75,5 @@ void playerMove(struct slots slot[], struct players player[], int currentPlayer,
 			break;
 	}
 
-	player[currentPlayer].position = playerMove; // change the slot the player is in to the number of the new slot
-
-	printf("%d \n", player[currentPlayer].position);
+	printf("\nThe player %d is now in slot %d\n", currentPlayer, player[currentPlayer].position);
 }

@@ -38,11 +38,6 @@ int main(void)
 
 	playerPositionStart(slot, player); // call function to position each player in a slot
 
-	for (int i = 0; i < playerNumber; i++)
-	{
-		printf("name %s \t type %d \t life %d \t sm %d \t st %d \t ms %d \t l %d \t d %d \t pos %d\t occ %d \n", player[i].name, player[i].type, player[i].lifePoints, player[i].smartness, player[i].strength, player[i].magicSkills, player[i].luck, player[i].dexterity, player[i].position, slot[player[i].position].occupied);
-	}
-
 	// loop through each player
 	for (int currentPlayer = 0; currentPlayer < playerNumber; currentPlayer++)
 	{
