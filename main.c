@@ -10,6 +10,8 @@ int main(void)
 
 	srand(time(NULL)); // seed the rand function
 
+	printf("Welcome to Crossfire\n"); // welcoming message
+
 	// ask user for the number of players and verify that it is between 1 and 6
 
 	do
