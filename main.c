@@ -17,15 +17,13 @@ int main(void)
 	do
 	{
 		printf("Please enter the number of players (max = 6): "); // prompt
-		scanf("%d", &playerNumber); // read the number of players from the user
-
+		scanf(" %d", &playerNumber); // read the number of players from the user
+		getchar(); // read newline character from buffer (for fgets in playerInitialize)
 	} while (playerNumber > 6 || playerNumber < 1); // validate that it is between 1 and 6
 
-	puts(""); // go to a new line
+	puts(""); // new line
 
 	playerInitialize(player);
-
-	puts(""); // go to a new line
 
 	// ask user for the number of slots and verify that it is between 1 and 20
 	do
@@ -33,6 +31,8 @@ int main(void)
 		printf("Please enter the number of slots (from %d to 20): ", playerNumber); // prompt
 		scanf("%d", &slotNumber); // read the number of slots from the user
 	} while (slotNumber > 20 || slotNumber < playerNumber); // validate that it is between 1 and 20
+
+	puts(""); // newline
 
 	slotInitialize(slot); // call function to setup slot types
 

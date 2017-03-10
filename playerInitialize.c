@@ -1,20 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include "operations.h" // operations header
 
 void playerInitialize(struct players player[])
 {
 	for (int currentPlayer = 0; currentPlayer < playerNumber; currentPlayer++)
 	{
-		printf("Please input a players name followed by the player type, 0 for Elf, 1 for Human, 2 for Ogre and 3 for Wizard: "); // prompt
-		scanf("%s %d", player[currentPlayer].name, &player[currentPlayer].type); // read player name and type from user and assign data to player structure
+		printf("Please input player %ds name: ", currentPlayer+1); // prompt
+		scanf("%19[^\n]s", player[currentPlayer].name);
 
 		// check if player type input from user is valid and if not request to give another input that is valid
-		while (player[currentPlayer].type > 3)
+		do
 		{
-			printf("Please input a valid input for the player type 0 for Elf, 1 for Human, 2 for Ogre and 3 for Wizard: "); // prompt
-			scanf("%d", &player[currentPlayer].type); // read player name and type from user and assign data to player structure
-		}
+			printf("Please input the player type, 0 for Elf, 1 for Human, 2 for Ogre and 3 for Wizard: ");
+			scanf("%d", &player[currentPlayer].type); // read player type from user and assign data to player structure
+			getchar(); // read newline character from buffer for fgets
+		} while (player[currentPlayer].type > 3);
+
+		puts(""); // newline
 
 		player[currentPlayer].lifePoints = 100; // set lifePoints to 100
 

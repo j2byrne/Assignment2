@@ -8,7 +8,7 @@ void playerTurn(struct slots slot[], struct players player[], int currentPlayer)
 	int nextSlot = (player[currentPlayer].position+1) % slotNumber;// next slot to the one that the player is in, equation to account for when the number is greater than or equal to the slotNumber
 	enum playerActions playerAction; // enum playerActions to store what the player is going to do
 
-	printf("\nPlease enter 0 if you want to attack or 1 if you want to move: "); // prompt
+	printf("Please enter 0 if you want to attack or 1 if you want to move: "); // prompt
 	scanf("%d", &playerAction); // read integer which is saved in the enumeration playerAction to determine whether the player wants to attack another player or move position
 
 	// switch to determine the players action

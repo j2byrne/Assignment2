@@ -6,7 +6,7 @@ void playerMove(struct slots slot[], struct players player[], int currentPlayer,
 {
 	int playerMove; // position that the player will move to
 	int moveSlot; // user choice to move player
-	int currentSlot = player[currentPlayer].position;
+	int currentSlot = player[currentPlayer].position; // currentSlot int storing the position of the currentPlayer
 
 	if (slot[previousSlot].occupied != false && slot[nextSlot].occupied != false) // When there are no empty neighboring slots
 	{
